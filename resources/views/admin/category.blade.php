@@ -5,7 +5,7 @@
 @include('admin.css') 
 <style class="text/css">
 .bg{
-    background-color: green;
+    background-color: rgb(7, 57, 7);
 }
 .center 
 {
@@ -64,7 +64,7 @@
                 </form>
             </div>
 
-        <table class="tbl_center table-borded">
+        <table class="tbl_center table table-stripped">
                 <tr class="bg">
                     <th>Category Name</th>
                     <th class="span-span">Action</th>
@@ -79,9 +79,9 @@
                     <td>
                         <a onclick="return confirm('Are you sure u want to delete this category?')" class="btn btn-danger" href="{{url('delete_category', $data->id)}}">Delete</a>
                     </td>
-                    <td>
+                    {{-- <td>
                         <a href="{{url('edit_category', $data->id)}}" class="btn btn-secondary">Edit</a>
-                    </td>
+                    </td> --}}
                 </tr>
                 @endforeach
             </table>

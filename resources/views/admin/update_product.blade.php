@@ -42,12 +42,12 @@
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                     {{session()->get('message')}}
                 </div>                    
-            @endif
+                @endif
 
 
                 <div class="prod_center">
-                    <h2 class="font_size">Edit a Product</h2>
-                    <form action="{{url('/update_product_confirm',$product)}}" method="post" enctype="multipart/form-data">
+                    <h2 class="font_size">Edit Product</h2>
+                    <form action="{{url('/update_product_confirm',$product->id)}}" method="post" enctype="multipart/form-data">
 
                         @csrf
                     
@@ -73,7 +73,7 @@
 
                         <div class="div_design">
                             <label for="">Discount Price : </label>
-                            <input type="text" class="prod_input_color" name="discount"  value="{{$product->discount_price}}"placeholder="Discount Price">
+                            <input type="number" class="prod_input_color" name="discount_price"  value="{{$product->discount_price}}"placeholder="Discount Price">
                         </div>
                         
                         <div class="div_design">
@@ -89,16 +89,16 @@
                         
                         <div class="div_design">
                             <label for="">Current Product Image : </label>
-                            <img style="margin: auto" src="product/{{$product->image}}" height="100" width="100">                            
+                            <img style="margin: auto" src="product/{{$product->image}}" name="image" type="file" height="100" width="100">                            
                         </div>
 
                         <div class="div_design">
                             <label for="">Change Product Image : </label>
-                            <input type="file" class="prod_input_color" value="" name="image">
+                            <input type="file" name="image">
                         </div>
 
                         <div class="div_design">
-                            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                            <input type="submit" name="submit" value="Update" class="btn btn-success">
                         </div>
                     </form>
                 </div>
